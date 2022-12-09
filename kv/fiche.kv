@@ -1,0 +1,113 @@
+#:import utils kivy.utils
+#:import Gradient kivy_gradient.Gradient
+#:import C kivy.utils.get_color_from_hex
+
+<Fiche>:
+    FloatLayout:
+
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#FFFFFF")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        FloatLayout:
+            pos_hint: {"top": 1, "left": 1}
+            size_hint: 1, 0.15
+
+            ImageButton:
+                id: back
+                source: "Images/CookStock/Back.png"
+                size_hint: 0.5, 0.5
+                pos_hint: {'center_x': 0.05, 'center_y': 0.5}
+                on_press:
+                    app.get_back_from_fiche()
+
+            Label:
+                id: placard_title
+                text: "Fiche Recette"
+                font_size: '50dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.2, 0.2
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        FloatLayout:
+            canvas:
+                Color:
+                    rgb: C("#0c8079")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            rows: 1
+            pos_hint: {"top": 0.85, "left": 1}
+            size_hint: 1, 1
+
+            Button:
+                id: p1
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.4, 0.65
+                pos_hint: {'center_x': 0.25, 'center_y': 0.60}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+
+            Image:
+                id: recette_image
+                source: "Images/CookStock/Aliments/coing.jpg"
+                size_hint: 0.36, 0.61
+                pos_hint: {'center_x': 0.25, 'center_y': 0.60}
+
+            Label:
+                id: recette_name
+                text: "Artichauts citron et huile d'olive"
+                font_size: '27dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.3, 0.3
+                pos_hint: {'center_x': 0.72, 'center_y': 0.88}
+
+            Label:
+                id: recette_sort
+                text: "Plat"
+                font_size: '20dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.3, 0.3
+                pos_hint: {'center_x': 0.72, 'center_y': 0.75}
+
+            Label:
+                id: recette_a1
+                text: "Aliment 1"
+                font_size: '20dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.3, 0.3
+                pos_hint: {'center_x': 0.72, 'center_y': 0.6}
+
+            Label:
+                id: recette_a2
+                text: "Aliment 2"
+                font_size: '20dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.3, 0.3
+                pos_hint: {'center_x': 0.72, 'center_y': 0.53}
+
+            Label:
+                id: recette_a3
+                text: "Aliment 3"
+                font_size: '20dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.3, 0.3
+                pos_hint: {'center_x': 0.72, 'center_y': 0.46}
+
+            Label:
+                id: recette_link
+                text: "//www.mangerbouger.fr/manger-mieux/la-fabrique-a-menus/recettes/2859-tajine-de-poulet-aux-carottes-fondantes-et-pruneaux-semoule"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.3, 0.3
+                pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+

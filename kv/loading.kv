@@ -1,0 +1,28 @@
+#:import utils kivy.utils
+#:import Gradient kivy_gradient.Gradient
+#:import C kivy.utils.get_color_from_hex
+
+<Loading>:
+    FloatLayout:
+
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#FFFFFF")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        FloatLayout:
+            canvas:
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            rows: 1
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, 1
+
+            Image:
+                id: logo
+                source: "Images/CookStock/logo-cs.png"
+                size_hint: 0.7,0.8
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}

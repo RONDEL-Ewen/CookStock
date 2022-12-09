@@ -1,0 +1,121 @@
+#:import utils kivy.utils
+#:import Gradient kivy_gradient.Gradient
+#:import C kivy.utils.get_color_from_hex
+
+<CatalogueD>:
+    FloatLayout:
+
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#FFFFFF")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        FloatLayout:
+            pos_hint: {"top": 1, "left": 1}
+            size_hint: 1, 0.15
+
+            ImageButton:
+                id: back
+                source: "Images/CookStock/Back.png"
+                size_hint: 0.5, 0.5
+                pos_hint: {'center_x': 0.05, 'center_y': 0.5}
+                on_press:
+                    app.change_screen("catalogue_c_screen")
+
+            ImageButton:
+                id: front
+                source: "Images/CookStock/Front.png"
+                size_hint: 0.5, 0.5
+                pos_hint: {'center_x': 0.95, 'center_y': 0.5}
+                on_press:
+                    app.change_screen("catalogue_a_screen")
+
+            Label:
+                id: placard_title
+                text: "Catalogue (4/4)"
+                font_size: '50dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.2, 0.2
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        FloatLayout:
+            canvas:
+                Color:
+                    rgb: C("#0c8079")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            rows: 1
+            pos_hint: {"top": 0.85, "left": 1}
+            size_hint: 1, 1
+
+            Button:
+                id: p1
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.111, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("tomate cerise")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p1_image
+                source: "Images/CookStock/Aliments/tomate cerise.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.111, 'center_y': 0.85}
+
+            Button:
+                id: p2
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.222, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("tomate")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p2_image
+                source: "Images/CookStock/Aliments/tomate.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.222, 'center_y': 0.85}
+
+            Button:
+                id: p3
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.333, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("topinambour")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p3_image
+                source: "Images/CookStock/Aliments/topinambour.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.333, 'center_y': 0.85}

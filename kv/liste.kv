@@ -1,0 +1,408 @@
+#:import utils kivy.utils
+#:import Gradient kivy_gradient.Gradient
+#:import C kivy.utils.get_color_from_hex
+
+<Liste>:
+    FloatLayout:
+
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#FFFFFF")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        FloatLayout:
+            pos_hint: {"top": 1, "left": 1}
+            size_hint: 1, 0.15
+
+            ImageButton:
+                id: back
+                source: "Images/CookStock/Back.png"
+                size_hint: 0.5, 0.5
+                pos_hint: {'center_x': 0.05, 'center_y': 0.5}
+                on_press:
+                    app.state = "accueil"
+                    app.change_screen("accueil_screen")
+
+            Label:
+                id: title
+                text: "Recettes"
+                font_size: '50dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.2, 0.2
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        FloatLayout:
+            canvas:
+                Color:
+                    rgb: C("#78f4b5")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            rows: 1
+            pos_hint: {"top": 0.85, "left": 1}
+            size_hint: 1, 1
+
+            Button:
+                id: p1
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "1"
+                size_hint: 0.05, 0.06
+                pos_hint: {'center_x': 0.075, 'center_y': 0.95}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+
+            Button:
+                id: pa
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "Recette 1"
+                size_hint: 0.8, 0.06
+                pos_hint: {'center_x': 0.525, 'center_y': 0.95}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.update_fiche(0)
+                    app.change_screen("fiche_screen")
+
+            Button:
+                id: p2
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "2"
+                size_hint: 0.05, 0.06
+                pos_hint: {'center_x': 0.075, 'center_y': 0.88}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+
+            Button:
+                id: pb
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "Recette 2"
+                size_hint: 0.8, 0.06
+                pos_hint: {'center_x': 0.525, 'center_y': 0.88}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.update_fiche(1)
+                    app.change_screen("fiche_screen")
+
+            Button:
+                id: p3
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "3"
+                size_hint: 0.05, 0.06
+                pos_hint: {'center_x': 0.075, 'center_y': 0.81}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+
+            Button:
+                id: pc
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "Recette 3"
+                size_hint: 0.8, 0.06
+                pos_hint: {'center_x': 0.525, 'center_y': 0.81}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.update_fiche(2)
+                    app.change_screen("fiche_screen")
+
+            Button:
+                id: p4
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "4"
+                size_hint: 0.05, 0.06
+                pos_hint: {'center_x': 0.075, 'center_y': 0.74}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+
+            Button:
+                id: pd
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "Recette 4"
+                size_hint: 0.8, 0.06
+                pos_hint: {'center_x': 0.525, 'center_y': 0.74}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.update_fiche(3)
+                    app.change_screen("fiche_screen")
+
+            Button:
+                id: p5
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "5"
+                size_hint: 0.05, 0.06
+                pos_hint: {'center_x': 0.075, 'center_y': 0.67}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+
+            Button:
+                id: pe
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "Recette 5"
+                size_hint: 0.8, 0.06
+                pos_hint: {'center_x': 0.525, 'center_y': 0.67}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.update_fiche(4)
+                    app.change_screen("fiche_screen")
+
+            Button:
+                id: p6
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "6"
+                size_hint: 0.05, 0.06
+                pos_hint: {'center_x': 0.075, 'center_y': 0.6}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+
+            Button:
+                id: pf
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "Recette 6"
+                size_hint: 0.8, 0.06
+                pos_hint: {'center_x': 0.525, 'center_y': 0.6}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.update_fiche(5)
+                    app.change_screen("fiche_screen")
+
+            Button:
+                id: p7
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "7"
+                size_hint: 0.05, 0.06
+                pos_hint: {'center_x': 0.075, 'center_y': 0.53}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+
+            Button:
+                id: pg
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "Recette 7"
+                size_hint: 0.8, 0.06
+                pos_hint: {'center_x': 0.525, 'center_y': 0.53}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.update_fiche(6)
+                    app.change_screen("fiche_screen")
+
+            Button:
+                id: p8
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "8"
+                size_hint: 0.05, 0.06
+                pos_hint: {'center_x': 0.075, 'center_y': 0.46}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+
+            Button:
+                id: ph
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "Recette 8"
+                size_hint: 0.8, 0.06
+                pos_hint: {'center_x': 0.525, 'center_y': 0.46}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.update_fiche(7)
+                    app.change_screen("fiche_screen")
+
+            Button:
+                id: p9
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "9"
+                size_hint: 0.05, 0.06
+                pos_hint: {'center_x': 0.075, 'center_y': 0.39}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+
+            Button:
+                id: pi
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "Recette 9"
+                size_hint: 0.8, 0.06
+                pos_hint: {'center_x': 0.525, 'center_y': 0.39}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.update_fiche(8)
+                    app.change_screen("fiche_screen")
+
+            Button:
+                id: p10
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "10"
+                size_hint: 0.05, 0.06
+                pos_hint: {'center_x': 0.075, 'center_y': 0.32}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+
+            Button:
+                id: pj
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "Recette 10"
+                size_hint: 0.8, 0.06
+                pos_hint: {'center_x': 0.525, 'center_y': 0.32}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.update_fiche(9)
+                    app.change_screen("fiche_screen")
+
+            Button:
+                id: p11
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "11"
+                size_hint: 0.05, 0.06
+                pos_hint: {'center_x': 0.075, 'center_y': 0.25}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+
+            Button:
+                id: pk
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#000000")
+                text: "Recette 11"
+                size_hint: 0.8, 0.06
+                pos_hint: {'center_x': 0.525, 'center_y': 0.25}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.update_fiche(10)
+                    app.change_screen("fiche_screen")

@@ -1,0 +1,609 @@
+#:import utils kivy.utils
+#:import Gradient kivy_gradient.Gradient
+#:import C kivy.utils.get_color_from_hex
+
+<CatalogueC>:
+    FloatLayout:
+
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#FFFFFF")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        FloatLayout:
+            pos_hint: {"top": 1, "left": 1}
+            size_hint: 1, 0.15
+
+            ImageButton:
+                id: back
+                source: "Images/CookStock/Back.png"
+                size_hint: 0.5, 0.5
+                pos_hint: {'center_x': 0.05, 'center_y': 0.5}
+                on_press:
+                    app.change_screen("catalogue_b_screen")
+
+            ImageButton:
+                id: front
+                source: "Images/CookStock/Front.png"
+                size_hint: 0.5, 0.5
+                pos_hint: {'center_x': 0.95, 'center_y': 0.5}
+                on_press:
+                    app.change_screen("catalogue_d_screen")
+
+            Label:
+                id: placard_title
+                text: "Catalogue (3/4)"
+                font_size: '50dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.2, 0.2
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        FloatLayout:
+            canvas:
+                Color:
+                    rgb: C("#0c8079")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            rows: 1
+            pos_hint: {"top": 0.85, "left": 1}
+            size_hint: 1, 1
+
+            Button:
+                id: p1
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.111, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("noisette")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p1_image
+                source: "Images/CookStock/Aliments/noisette.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.111, 'center_y': 0.85}
+
+            Button:
+                id: p2
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.222, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("noix")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p2_image
+                source: "Images/CookStock/Aliments/noix.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.222, 'center_y': 0.85}
+
+            Button:
+                id: p3
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.333, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("oignon")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p3_image
+                source: "Images/CookStock/Aliments/oignon.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.333, 'center_y': 0.85}
+
+            Button:
+                id: p4
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.444, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("orange")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p4_image
+                source: "Images/CookStock/Aliments/orange.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.444, 'center_y': 0.85}
+
+            Button:
+                id: p5
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.555, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("pamplemousse")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p5_image
+                source: "Images/CookStock/Aliments/pamplemousse.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.555, 'center_y': 0.85}
+
+            Button:
+                id: p6
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.666, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("panais")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p6_image
+                source: "Images/CookStock/Aliments/panais.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.666, 'center_y': 0.85}
+
+            Button:
+                id: p7
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.777, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("pasteque")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p7_image
+                source: "Images/CookStock/Aliments/pasteque.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.777, 'center_y': 0.85}
+
+            Button:
+                id: p8
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.888, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("peche")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p8_image
+                source: "Images/CookStock/Aliments/peche.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.888, 'center_y': 0.85}
+
+
+
+
+            Button:
+                id: p9
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.111, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("persil")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p9_image
+                source: "Images/CookStock/Aliments/persil.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.111, 'center_y': 0.65}
+
+            Button:
+                id: p10
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.222, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("petit pois")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p10_image
+                source: "Images/CookStock/Aliments/petit pois.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.222, 'center_y': 0.65}
+
+            Button:
+                id: p11
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.333, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("poire")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p11_image
+                source: "Images/CookStock/Aliments/poire.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.333, 'center_y': 0.65}
+
+            Button:
+                id: p12
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.444, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("poireau")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p12_image
+                source: "Images/CookStock/Aliments/poireau.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.444, 'center_y': 0.65}
+
+            Button:
+                id: p13
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.555, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("poivron")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p13_image
+                source: "Images/CookStock/Aliments/poivron.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.555, 'center_y': 0.65}
+
+            Button:
+                id: p14
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.666, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("pomme")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p14_image
+                source: "Images/CookStock/Aliments/pomme.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.666, 'center_y': 0.65}
+
+            Button:
+                id: p15
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.777, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("potiron")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p15_image
+                source: "Images/CookStock/Aliments/potiron.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.777, 'center_y': 0.65}
+
+            Button:
+                id: p16
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.888, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("prune")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p16_image
+                source: "Images/CookStock/Aliments/prune.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.888, 'center_y': 0.65}
+
+
+
+            Button:
+                id: p17
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.111, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("quetsche")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p17_image
+                source: "Images/CookStock/Aliments/quetsche.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.111, 'center_y': 0.45}
+
+            Button:
+                id: p18
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.222, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("radis noir")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p18_image
+                source: "Images/CookStock/Aliments/radis noir.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.222, 'center_y': 0.45}
+
+            Button:
+                id: p19
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.333, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("radis")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p19_image
+                source: "Images/CookStock/Aliments/radis.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.333, 'center_y': 0.45}
+
+            Button:
+                id: p20
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.444, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("raisin")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p20_image
+                source: "Images/CookStock/Aliments/raisin.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.444, 'center_y': 0.45}
+
+            Button:
+                id: p21
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.555, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("rhubarbe")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p21_image
+                source: "Images/CookStock/Aliments/rhubarbe.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.555, 'center_y': 0.45}
+
+            Button:
+                id: p22
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.666, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("rutabaga")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p22_image
+                source: "Images/CookStock/Aliments/rutabaga.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.666, 'center_y': 0.45}
+
+            Button:
+                id: p23
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.777, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("salade")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p23_image
+                source: "Images/CookStock/Aliments/salade.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.777, 'center_y': 0.45}
+
+            Button:
+                id: p24
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.888, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.add_aliment("salsifis")
+                    app.get_back_from_catalogue()
+
+            Image:
+                id: p24_image
+                source: "Images/CookStock/Aliments/salsifis.jpg"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.888, 'center_y': 0.45}

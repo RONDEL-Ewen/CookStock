@@ -1,0 +1,286 @@
+#:import utils kivy.utils
+#:import Gradient kivy_gradient.Gradient
+#:import C kivy.utils.get_color_from_hex
+
+<Accueil>:
+    FloatLayout:
+
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#FFFFFF")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        FloatLayout:
+            canvas:
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            rows: 1
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, 1
+
+            ImageButton:
+                id: logo
+                source: "Images/CookStock/logo-cs.png"
+                size_hint: 0.05,0.1
+                pos_hint: {'center_x': 0.1, 'center_y': 0.95}
+                on_press:
+                    app.classify_recettes()
+                    print(app.livre)
+
+            Button:
+                id: pack_1
+                background_color: (0,0,0,0)
+                size_hint: 0.25, 0.35
+                pos_hint: {'center_x': 0.2, 'center_y': 0.675}
+                canvas.before:
+                    Color:
+                        rgb: C("#78f4b5")
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [20,20,20,20]
+                on_press:
+                    app.selection_rangement = "placard"
+                    app.update_placard()
+                    app.change_screen("placard_screen")
+
+            Image:
+                id: placard_icone
+                source: "Images/CookStock/placard_icon.png"
+                size_hint: 0.4,0.2
+                pos_hint: {'center_x': 0.2, 'center_y': 0.675}
+
+            Button:
+                id: pack_2
+                background_color: (0,0,0,0)
+                size_hint: 0.25, 0.35
+                pos_hint: {'center_x': 0.5, 'center_y': 0.675}
+                canvas.before:
+                    Color:
+                        rgb: C("#78f4b5")
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [20,20,20,20]
+                on_press:
+                    app.selection_rangement = "frigo"
+                    app.update_frigo()
+                    app.change_screen("frigo_screen")
+
+            Image:
+                id: frigo_icone
+                source: "Images/CookStock/frigo_icon.png"
+                size_hint: 0.4,0.2
+                pos_hint: {'center_x': 0.5, 'center_y': 0.675}
+
+            Button:
+                id: pack_3
+                background_color: (0,0,0,0)
+                size_hint: 0.25, 0.35
+                pos_hint: {'center_x': 0.8, 'center_y': 0.675}
+                canvas.before:
+                    Color:
+                        rgb: C("#78f4b5")
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [20,20,20,20]
+                on_press:
+                    app.selection_rangement = "congelo"
+                    app.update_congelo()
+                    app.change_screen("congelo_screen")
+
+            Image:
+                id: congelo_icone
+                source: "Images/CookStock/congelo_icon.png"
+                size_hint: 0.4,0.2
+                pos_hint: {'center_x': 0.8, 'center_y': 0.675}
+
+            Button:
+                id: recette1
+                background_color: (0,0,0,0)
+                size_hint: 0.18, 0.35
+                pos_hint: {'center_x': 0.165, 'center_y': 0.225}
+                canvas.before:
+                    Color:
+                        rgb: C("#78f4b5")
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [20,20,20,20]
+                on_press:
+                    app.update_fiche(0)
+                    app.change_screen("fiche_screen")
+
+            Image:
+                id: recette1_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.12,0.12
+                pos_hint: {'center_x': 0.165, 'center_y': 0.31}
+
+            Label:
+                id: recette1_name
+                text: "Nom de recette assez long"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.18, 0.18
+                pos_hint: {'center_x': 0.165, 'center_y': 0.22}
+
+            Label:
+                id: recette1_a1
+                text: "Aliment 1"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.18, 0.18
+                pos_hint: {'center_x': 0.165, 'center_y': 0.17}
+
+            Label:
+                id: recette1_a2
+                text: "Aliment 2"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.18, 0.18
+                pos_hint: {'center_x': 0.165, 'center_y': 0.14}
+
+            Label:
+                id: recette1_a3
+                text: "Aliment 3"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.18, 0.18
+                pos_hint: {'center_x': 0.165, 'center_y': 0.11}
+
+            Button:
+                id: recette2
+                background_color: (0,0,0,0)
+                size_hint: 0.18, 0.35
+                pos_hint: {'center_x': 0.385, 'center_y': 0.225}
+                canvas.before:
+                    Color:
+                        rgb: C("#78f4b5")
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [20,20,20,20]
+                on_press:
+                    app.update_fiche(1)
+                    app.change_screen("fiche_screen")
+
+            Image:
+                id: recette2_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.12,0.12
+                pos_hint: {'center_x': 0.385, 'center_y': 0.31}
+
+            Label:
+                id: recette2_name
+                text: "Nom de recette assez long"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.18, 0.18
+                pos_hint: {'center_x': 0.385, 'center_y': 0.22}
+
+            Label:
+                id: recette2_a1
+                text: "Aliment 1"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.18, 0.18
+                pos_hint: {'center_x': 0.385, 'center_y': 0.17}
+
+            Label:
+                id: recette2_a2
+                text: "Aliment 2"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.18, 0.18
+                pos_hint: {'center_x': 0.385, 'center_y': 0.14}
+
+            Label:
+                id: recette2_a3
+                text: "Aliment 3"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.18, 0.18
+                pos_hint: {'center_x': 0.385, 'center_y': 0.11}
+
+
+            Button:
+                id: recette3
+                background_color: (0,0,0,0)
+                size_hint: 0.18, 0.35
+                pos_hint: {'center_x': 0.615, 'center_y': 0.225}
+                canvas.before:
+                    Color:
+                        rgb: C("#78f4b5")
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [20,20,20,20]
+                on_press:
+                    app.update_fiche(2)
+                    app.change_screen("fiche_screen")
+
+            Image:
+                id: recette3_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.12,0.12
+                pos_hint: {'center_x': 0.615, 'center_y': 0.31}
+
+            Label:
+                id: recette3_name
+                text: "Nom de recette assez long"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.18, 0.18
+                pos_hint: {'center_x': 0.615, 'center_y': 0.22}
+
+            Label:
+                id: recette3_a1
+                text: "Aliment 1"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.18, 0.18
+                pos_hint: {'center_x': 0.615, 'center_y': 0.17}
+
+            Label:
+                id: recette3_a2
+                text: "Aliment 2"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.18, 0.18
+                pos_hint: {'center_x': 0.615, 'center_y': 0.14}
+
+            Label:
+                id: recette3_a3
+                text: "Aliment 3"
+                font_size: '10dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.18, 0.18
+                pos_hint: {'center_x': 0.615, 'center_y': 0.11}
+
+            Button:
+                id: liste_recettes
+                background_color: (0,0,0,0)
+                size_hint: 0.18, 0.35
+                pos_hint: {'center_x': 0.835, 'center_y': 0.225}
+                canvas.before:
+                    Color:
+                        rgb: C("#78f4b5")
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [20,20,20,20]
+                on_press:
+                    app.state = "liste"
+                    app.update_liste()
+                    app.change_screen("liste_screen")
+
+            Image:
+                id: liste_recettes_image
+                source: "Images/CookStock/Front-transparent.png"
+                size_hint: 0.18,0.18
+                pos_hint: {'center_x': 0.835, 'center_y': 0.225}

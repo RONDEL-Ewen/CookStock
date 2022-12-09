@@ -1,0 +1,64 @@
+#:include kv/loading.kv
+#:include kv/accueil.kv
+#:include kv/placard.kv
+#:include kv/frigo.kv
+#:include kv/congelo.kv
+#:include kv/catalogue-A.kv
+#:include kv/catalogue-B.kv
+#:include kv/catalogue-C.kv
+#:include kv/catalogue-D.kv
+#:include kv/fiche.kv
+#:include kv/liste.kv
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+GridLayout:
+
+    cols: 1
+    ScreenManager:
+        transition: NoTransition()
+        id: screen_manager
+
+        Loading:
+            name: "loading_screen"
+            id: loading_screen
+
+        Accueil:
+            name: "accueil_screen"
+            id: accueil_screen
+
+        Placard:
+            name: "placard_screen"
+            id: placard_screen
+
+        Frigo:
+            name: "frigo_screen"
+            id: frigo_screen
+
+        Congelo:
+            name: "congelo_screen"
+            id: congelo_screen
+
+        CatalogueA:
+            name: "catalogue_a_screen"
+            id: catalogue_a_screen
+
+        CatalogueB:
+            name: "catalogue_b_screen"
+            id: catalogue_b_screen
+
+        CatalogueC:
+            name: "catalogue_c_screen"
+            id: catalogue_c_screen
+
+        CatalogueD:
+            name: "catalogue_d_screen"
+            id: catalogue_d_screen
+
+        Fiche:
+            name: "fiche_screen"
+            id: fiche_screen
+
+        Liste:
+            name: "liste_screen"
+            id: liste_screen
+

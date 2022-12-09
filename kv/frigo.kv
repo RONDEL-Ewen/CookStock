@@ -1,0 +1,588 @@
+#:import utils kivy.utils
+#:import Gradient kivy_gradient.Gradient
+#:import C kivy.utils.get_color_from_hex
+
+<Frigo>:
+    FloatLayout:
+
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#FFFFFF")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        FloatLayout:
+            pos_hint: {"top": 1, "left": 1}
+            size_hint: 1, 0.15
+
+            ImageButton:
+                id: back
+                source: "Images/CookStock/Back.png"
+                size_hint: 0.5, 0.5
+                pos_hint: {'center_x': 0.05, 'center_y': 0.5}
+                on_press:
+                    app.state = "accueil"
+                    app.classify_recettes()
+                    app.update_recettes_accueil()
+                    app.change_screen("accueil_screen")
+
+            ImageButton:
+                id: plus
+                source: "Images/CookStock/Plus.png"
+                size_hint: 0.2, 0.2
+                pos_hint: {'center_x': 0.95, 'center_y': 0.5}
+                on_press:
+                    app.change_screen("catalogue_a_screen")
+
+            Label:
+                id: placard_title
+                text: "Votre réfrigérateur"
+                font_size: '50dp'
+                color: utils.get_color_from_hex("#000000")
+                size_hint: 0.2, 0.2
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        FloatLayout:
+            canvas:
+                Color:
+                    rgb: C("#78f4b5")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            rows: 1
+            pos_hint: {"top": 0.85, "left": 1}
+            size_hint: 1, 1
+
+            Button:
+                id: p1
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.111, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(0)
+
+            Image:
+                id: p1_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.111, 'center_y': 0.85}
+
+            Button:
+                id: p2
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.222, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(1)
+
+            Image:
+                id: p2_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.222, 'center_y': 0.85}
+
+            Button:
+                id: p3
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.333, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(2)
+
+            Image:
+                id: p3_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.333, 'center_y': 0.85}
+
+            Button:
+                id: p4
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.444, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(3)
+
+            Image:
+                id: p4_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.444, 'center_y': 0.85}
+
+            Button:
+                id: p5
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.555, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(4)
+
+            Image:
+                id: p5_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.555, 'center_y': 0.85}
+
+            Button:
+                id: p6
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.666, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(5)
+
+            Image:
+                id: p6_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.666, 'center_y': 0.85}
+
+            Button:
+                id: p7
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.777, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(6)
+
+            Image:
+                id: p7_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.777, 'center_y': 0.85}
+
+            Button:
+                id: p8
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.888, 'center_y': 0.85}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(7)
+
+            Image:
+                id: p8_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.888, 'center_y': 0.85}
+
+
+
+
+            Button:
+                id: p9
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.111, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(8)
+
+            Image:
+                id: p9_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.111, 'center_y': 0.65}
+
+            Button:
+                id: p10
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.222, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(9)
+
+            Image:
+                id: p10_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.222, 'center_y': 0.65}
+
+            Button:
+                id: p11
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.333, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(10)
+
+            Image:
+                id: p11_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.333, 'center_y': 0.65}
+
+            Button:
+                id: p12
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.444, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(11)
+
+            Image:
+                id: p12_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.444, 'center_y': 0.65}
+
+            Button:
+                id: p13
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.555, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(12)
+
+            Image:
+                id: p13_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.555, 'center_y': 0.65}
+
+            Button:
+                id: p14
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.666, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(13)
+
+            Image:
+                id: p14_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.666, 'center_y': 0.65}
+
+            Button:
+                id: p15
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.777, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(14)
+
+            Image:
+                id: p15_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.777, 'center_y': 0.65}
+
+            Button:
+                id: p16
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.888, 'center_y': 0.65}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(15)
+
+            Image:
+                id: p16_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.888, 'center_y': 0.65}
+
+
+
+            Button:
+                id: p17
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.111, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(16)
+
+            Image:
+                id: p17_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.111, 'center_y': 0.45}
+
+            Button:
+                id: p18
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.222, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(17)
+
+            Image:
+                id: p18_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.222, 'center_y': 0.45}
+
+            Button:
+                id: p19
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.333, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(18)
+
+            Image:
+                id: p19_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.333, 'center_y': 0.45}
+
+            Button:
+                id: p20
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.444, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(19)
+
+            Image:
+                id: p20_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.444, 'center_y': 0.45}
+
+            Button:
+                id: p21
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.555, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(20)
+
+            Image:
+                id: p21_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.555, 'center_y': 0.45}
+
+            Button:
+                id: p22
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.666, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(21)
+
+            Image:
+                id: p22_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.666, 'center_y': 0.45}
+
+            Button:
+                id: p23
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.777, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(22)
+
+            Image:
+                id: p23_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.777, 'center_y': 0.45}
+
+            Button:
+                id: p24
+                background_color: (0,0,0,0)
+                color: utils.get_color_from_hex("#E2693E")
+                size_hint: 0.08, 0.12
+                pos_hint: {'center_x': 0.888, 'center_y': 0.45}
+                canvas.before:
+                    Color:
+                        rgb: 1,1,1
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [10,10,10,10]
+                on_press:
+                    app.supp_aliment(23)
+
+            Image:
+                id: p24_image
+                source: "Images/CookStock/white.png"
+                size_hint: 0.06, 0.1
+                pos_hint: {'center_x': 0.888, 'center_y': 0.45}
